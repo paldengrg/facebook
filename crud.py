@@ -6,60 +6,20 @@ root=Tk()
 root.title("CRUD")
 conn=sqlite3.connect("facebook.db")
 c=conn.cursor()
-c.execute("""CREATE TABLE user(
-    firstname text,
-    lastname text,
-    age int,
-    address text,
-    city text,
-    zipcode int,
-    password text,
-    gender text)"""
-    )
-print("table created successfully")
+# c.execute("""CREATE TABLE user(
+#     firstname text,
+#     lastname text,
+#     age int,
+#     address text,
+#     city text,
+#     zipcode int,
+#     password text,
+#     gender text)"""
+#     )
+# print("table created successfully")
 
 
 
-
-f_name=Entry(root,width=30)
-f_name.grid(row=0,column=1)
-l_name=Entry(root,width=30)
-l_name.grid(row=1,column=1)
-age=Entry(root,width=30)
-age.grid(row=2,column=1)
-address=Entry(root,width=30)
-address.grid(row=3,column=1)
-city=Entry(root,width=30)
-city.grid(row=4,column=1)
-zipcode=Entry(root,width=30)
-zipcode.grid(row=5,column=1)
-password=Entry(root,width=30)
-password.grid(row=6,column=1)
-gender=Entry(root,width=30)
-gender.grid(row=7,column=1)
-
-delete_box=Entry(root,width=30)
-delete_box.grid(row=11,column=1,pady=5)
-
-
-f_name_label=Label(root,text="first name")
-f_name_label.grid(row=0,column=0)
-l_name_label=Label(root,text="last name")
-l_name_label.grid(row=1,column=0)
-age_label=Label(root,text="age")
-age_label.grid(row=2,column=0)
-address_label=Label(root,text="address")
-address_label.grid(row=3,column=0)
-city_label=Label(root,text="city")
-city_label.grid(row=4,column=0)
-zipcode_label=Label(root,text="zipcode")
-zipcode_label.grid(row=5,column=0)
-password_label=Label(root,text="password")
-password_label.grid(row=6,column=0)
-gender_label=Label(root,text="gender")
-gender_label.grid(row=7,column=0)
-delete_label=Label(root,text="Delete ID")
-delete_label.grid(row=11,column=0,pady=5)
 
 
 def submit():
@@ -226,6 +186,46 @@ def edit():
         gender_editor.insert(0,record[7])
 
 
+
+f_name=Entry(root,width=30)
+f_name.grid(row=0,column=1)
+l_name=Entry(root,width=30)
+l_name.grid(row=1,column=1)
+age=Entry(root,width=30)
+age.grid(row=2,column=1)
+address=Entry(root,width=30)
+address.grid(row=3,column=1)
+city=Entry(root,width=30)
+city.grid(row=4,column=1)
+zipcode=Entry(root,width=30)
+zipcode.grid(row=5,column=1)
+password=Entry(root,width=30)
+password.grid(row=6,column=1)
+gender=Entry(root,width=30)
+gender.grid(row=7,column=1)
+
+delete_box=Entry(root,width=30)
+delete_box.grid(row=11,column=1,pady=5)
+
+
+f_name_label=Label(root,text="first name")
+f_name_label.grid(row=0,column=0)
+l_name_label=Label(root,text="last name")
+l_name_label.grid(row=1,column=0)
+age_label=Label(root,text="age")
+age_label.grid(row=2,column=0)
+address_label=Label(root,text="address")
+address_label.grid(row=3,column=0)
+city_label=Label(root,text="city")
+city_label.grid(row=4,column=0)
+zipcode_label=Label(root,text="zipcode")
+zipcode_label.grid(row=5,column=0)
+password_label=Label(root,text="password")
+password_label.grid(row=6,column=0)
+gender_label=Label(root,text="gender")
+gender_label.grid(row=7,column=0)
+delete_label=Label(root,text="Delete ID")
+delete_label.grid(row=11,column=0,pady=5)
 
 
 delete_btn=Button(root,text="Delete Records",command=delete)
